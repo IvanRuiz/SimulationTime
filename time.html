@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>  
+        var event_time = 0.0;
+        var simulation_time=40.1;
+        
+        ///SIMULATION-START
+        function simulation() {
+            timer();
+        }///SIMULATION-END
+
+        ///TIMER-START
+        function timer() {
+
+            if (event_time < simulation_time) {
+
+                timeStep();
+
+                event_time += 0.1;
+                
+                setTimeout(timer, 2);
+
+            }
+        }///TIMER-END
+
+        ///TIMESTEP-START
+        function timeStep() {
+
+            print_timeStep();
+
+        } ///TIMESTEP-END
+
+        ///CONSOLE VISUALIZATION
+        function print_timeStep() {
+
+            console.log(event_time.toFixed(1) + "|");
+        }
+    </script>
+
+</body>
+
+</html>
